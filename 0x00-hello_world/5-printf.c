@@ -5,7 +5,7 @@
   *
   * description: print a string to stdout using printf
   *
-  * return: 0 to end the program
+  * Return: 0 to end the program
   */
 int main(void)
 {
