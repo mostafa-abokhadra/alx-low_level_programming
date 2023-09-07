@@ -1,9 +1,11 @@
 #include<stdio.h>
 
 /**
-  * main - print a string to stdout using printf
+  * main - entry point
   *
-  * return : 0 to end the program
+  * description: print a string to stdout using printf
+  *
+  * return: 0 to end the program
   */
 int main(void)
 {
