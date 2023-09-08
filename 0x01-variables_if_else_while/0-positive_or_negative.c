@@ -4,7 +4,7 @@
 
 /**
   * check - wether the number is +ve or -ve
-  * @argument num: the number we will check
+  * @num : the number we will check
   *
   * Description: prints the num is positive if num > 0,
   * num is negative if num < 0 , and num is zero if num = zero
@@ -16,26 +16,25 @@ void check(int num)
 {
 		if (num > 0)
 			printf("%d is positive\n", num);
-		else if (num == 0)
+		else if (num < 0)
 			printf("%d is negative\n", num);
 		else
 			printf("%d is zero\n", num);
 }
 /**
   * main - entry point
-  * 
+  *
   * Description:  assign a random number to the variable n
   *
-  * Return: return 0 to end the program 
+  * Return: return 0 to end the program
   *
   */
 int main(void)
 {
-	int n;
-
-        srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	check(n);
-	return (0);
+		int n;
+		srand(time(0));
+		n = rand() - RAND_MAX / 2;
+		check(n);
+		return (0);
 }
 
