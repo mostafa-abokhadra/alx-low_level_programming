@@ -39,7 +39,7 @@ int main(void)
 
 		srand(time(0));
 		n = rand() - RAND_MAX / 2;
-		check(n);
+		last_digit(n);
 		return (0);
 }
 
