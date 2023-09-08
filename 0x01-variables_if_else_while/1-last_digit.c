@@ -4,8 +4,8 @@
 
 /**
   * last_digit - operating on last digit of a given number
-  *
-  * Description: if the last digit is greater than 5 
+  * @num: the number we will check it's last digit
+  * Description: if the last digit is greater than 5
   * or if less than six and not zero , or if zero
   * in each case will print to stdout some string
   *
@@ -17,10 +17,11 @@ void last_digit(int num)
 		int last;
 
 		last = num % 10;
-		if (num > 5)
+		if (last > 5)
 			printf("Last digit of %d is %d and is greater than 5\n", num, last);
-		else if (num < 6 && num != 0)
-			printf("Last digit of %d is %d and is and is less than 6 and not 0\n", num, last);
+		else if (last < 6 && last > 0)
+			printf("Last digit of %d is %d and is and is less than 6 and not 0\n",
+				num, last);
 		else
 			printf("Last digit of %d is %d and is 0\n", num, last);
 }
