@@ -7,7 +7,7 @@
   *
   * Return: 0 to end the program
   */
-int main()
+int main(void)
 {
 		_putchar('_');
 		_putchar('p');
