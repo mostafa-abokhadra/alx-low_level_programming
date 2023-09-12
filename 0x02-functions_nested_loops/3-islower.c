@@ -4,7 +4,8 @@
   * int _islower - checks for lowercase character
   * @c: the character to be checked
   *
-  * description : checks if a given char is in lower case or not
+  * description: return 1 if a given char,
+  * in the ascii code is from 97 to 122
   *
   * Return: 1 if lower case, 0 otherwise
   */
