@@ -25,7 +25,7 @@ void times_table(void)
 					int n1 = 0, n2 = 0;
 
 					n2 = (i * j) % 10;
-					n1= (i * j) / 10;
+					n1 = (i * j) / 10;
 					_putchar('0' + n1);
 					_putchar('0' + n2);
 				}
@@ -38,7 +38,7 @@ void times_table(void)
 				{
 					continue;
 				}
-				if (((j + 1) * i ) <= 9)
+				if (((j + 1) * i) <= 9)
 				{
 					_putchar(' ');
 				}
