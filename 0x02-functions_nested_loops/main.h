@@ -12,3 +12,4 @@ int add(int, int);
 void print_to_98(int n);
 void print_single(int i);
 void convert(int num);
+void sum_of_multiples();
