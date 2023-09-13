@@ -8,17 +8,18 @@
   *
   * Return: nothing
   */
-void sum_of_multiples()
+void sum_of_multiples(void)
 {
 		int counter = 0, i;
-		for (i =1 ; i <= 1024 ; i++)
+
+		for (i = 1 ; i <= 1024 ; i++)
 		{
-			if(i % 3 == 0 || i % 5 == 0)
+			if (i % 3 == 0 || i % 5 == 0)
 			{
-				counter+=i;
+				counter += i;
 			}
 		}
-		printf("%d\n",counter);
+		printf("%d\n", counter);
 }
 /**
   * main - entry point
