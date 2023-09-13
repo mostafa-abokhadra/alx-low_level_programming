@@ -9,7 +9,7 @@
   */
 void times_table(void)
 {
-		int i, j;
+		int i, j, c = 0;
 		for (i = 0 ; i <= 9 ; i++)
 		{
 			for (j = 0 ; j <= 9 ; j++)
@@ -17,10 +17,6 @@ void times_table(void)
 				if( i*j <= 9)
 				{
 					_putchar('0' + (i*j) );
-				}
-				if (i == 0 && (i * j+1) == 0 && j == 9)
-				{
-					continue;
 				}
 				else
 				{
@@ -35,11 +31,12 @@ void times_table(void)
 					_putchar(',');
 					_putchar(' ');
 				}
-				if ( ( (j+1) * i ) <= 9)
+				if ( ( (j+1) * i ) <= 9 && c != 0)
 				{
 					_putchar(' ');
 				}
 			}
+			c++;
 			_putchar('\n');
 		}
 }
