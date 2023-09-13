@@ -23,4 +23,6 @@ int main(void)
 			printf("%lu, ", arr[i]);
 		}
 		printf("\n");
+		return (0);
 }
+
