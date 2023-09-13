@@ -40,7 +40,7 @@ void convert(int num)
 		if (num < 0)
 		{
 			_putchar('-');
-			t = num -num -num;
+			t = num - num - num;
 		}
 		while (t)
 		{
@@ -73,9 +73,9 @@ void print_to_98(int n)
 {
 		int i;
 
-		for(i = n ; i <= 98 ; i++)
+		for (i = n ; i <= 98 ; i++)
 		{
-			if(i >= -9 && i <= 9)
+			if (i >= -9 && i <= 9)
 			{
 				print_single(i);
 			}
@@ -86,7 +86,7 @@ void print_to_98(int n)
 		}
 		if (n > 98)
 		{
-			for (i = n ; i>= 98 ; i--)
+			for (i = n ; i >= 98 ; i--)
 			{
 				convert(i);
 			}
