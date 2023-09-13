@@ -41,7 +41,7 @@ void print_to_98(int n)
 					j++;
 				}
 				j--;
-				for (j ; j >= 0 ; j--)
+				for ( ; j >= 0 ; j--)
 				{
 					_putchar('0' + arr[j]);
 				}
