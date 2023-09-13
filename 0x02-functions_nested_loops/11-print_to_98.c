@@ -53,5 +53,6 @@ void print_to_98(int n)
 				j = 0;
 			}
 		}
+		_putchar('\n');
 }
 
