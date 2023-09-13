@@ -10,7 +10,7 @@
   */
 int main(void)
 {
-		unsigned long long int arr [50];
+		unsigned long int arr [50];
 		int i;
 
 		arr[0] = 1, arr[1] = 2;
@@ -20,7 +20,7 @@ int main(void)
 		}
 		for (i = 0 ; i < 50 ; i++)
 		{
-			printf("%d, ", arr[i]);
+			printf("%lu, ", arr[i]);
 		}
 		printf("\n");
 }
