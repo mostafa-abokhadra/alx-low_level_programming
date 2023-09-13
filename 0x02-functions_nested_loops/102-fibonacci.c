@@ -10,7 +10,7 @@
   */
 int main(void)
 {
-		unsigned long int arr [50];
+		unsigned long int arr[50];
 		int i;
 
 		arr[0] = 1, arr[1] = 2;
@@ -20,7 +20,9 @@ int main(void)
 		}
 		for (i = 0 ; i < 50 ; i++)
 		{
-			printf("%lu, ", arr[i]);
+			printf("%lu", arr[i]);
+			if (i != 49)
+			printf(", ");
 		}
 		printf("\n");
 		return (0);
