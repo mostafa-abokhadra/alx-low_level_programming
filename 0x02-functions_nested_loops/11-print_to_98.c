@@ -77,7 +77,7 @@ convert(i);
 }
 if (n >98 )
 {
-for (int i =n;i>=98;i--)
+for (i =n;i>=98;i--)
 {
     convert (i);
 }
