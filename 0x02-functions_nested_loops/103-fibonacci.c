@@ -10,15 +10,17 @@
   */
 int main(void)
 {
-		int n1 = 1, n2 = 2, c = 0;
+		int n1 = 1, n2 = 2, n3 = 0, c = 2;
+
 		while (c < 4000000)
 		{
-			c = n1 + n2;
-			if (c % 2 == 0)
+			n3 = n1 + n2;
+			if (n3 % 2 == 0)
 			{
-				n2 += c;
+				c += n3;
 			}
-			n1 = n2; n2 = c;
+			n1 = n2;
+			n2 = n3;
 		}
 		printf("%d\n", c);
 		return (0);
