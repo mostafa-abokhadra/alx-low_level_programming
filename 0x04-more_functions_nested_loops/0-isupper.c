@@ -6,7 +6,7 @@
   *
   * Description: using ascii code to look for upper case letter
   *
-  * Retrun: 1 if the letter is in upper case , 0 if otherwise
+  * Return: 1 if the letter is in upper case , 0 if otherwise
   */
 int _isupper(int c)
 {
