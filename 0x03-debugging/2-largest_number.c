@@ -5,9 +5,6 @@
  * @a: first integer
  * @b: second integer
  * @c: third integer
- *
- * Desctiption: using if else to know the largest num
- *
  * Return: largest number
  */
 int largest_number(int a, int b, int c)
@@ -22,7 +19,7 @@ int largest_number(int a, int b, int c)
 		{
 			largest = b;
 		}
-		else if (c > a && c > b)
+		else
 		{
 			largest = c;
 		}
