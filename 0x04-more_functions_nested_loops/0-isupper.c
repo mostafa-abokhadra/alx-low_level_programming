@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * _isupprt - checking upper case letter
+  * _isupper - checking upper case letter
   * @c: the letter to be checked
   *
   * Description: using ascii code to look for upper case letter
