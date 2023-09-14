@@ -5,6 +5,9 @@
  * @a: first integer
  * @b: second integer
  * @c: third integer
+ *
+ * Desctiption: using if else to know the largest num
+ *
  * Return: largest number
  */
 int largest_number(int a, int b, int c)
