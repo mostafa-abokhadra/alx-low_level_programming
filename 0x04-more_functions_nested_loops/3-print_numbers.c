@@ -3,7 +3,7 @@
 /**
   * print_numbers - printing from 0 to 9
   *
-  * Description: using putchar func to print the ascii value 
+  * Description: using putchar func to print the ascii value
   *
   * Return: nothing
   */
