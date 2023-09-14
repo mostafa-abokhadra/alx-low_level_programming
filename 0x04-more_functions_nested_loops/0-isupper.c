@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
   * _isupprt - checking upper case letter
   * @c: the letter to be checked
