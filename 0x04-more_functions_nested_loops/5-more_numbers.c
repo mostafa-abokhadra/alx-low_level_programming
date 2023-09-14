@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
+  * more_numbers - printing from 1 to 14
   *
+  * Description: using ascii code to print nums to 14
   *
-  *
-  *
-  *
+  * Return: nothing
   */
 void more_numbers(void)
 {
@@ -20,19 +20,21 @@ void more_numbers(void)
 				{
 					_putchar('0' + i);
 				}
-
-				int t;
-
-				t = i;
-
-				for (j = 0 ; t ; j++)
+				else
 				{
-					arr[j] = t % 10;
-					t /= 10;
-				}
-				for (j = 1 ; j >= 0 ; j--)
-				{
-					_putchar('0' + arr[j]);
+					int t;
+
+					t = i;
+
+					for (j = 0 ; t ; j++)
+					{
+						arr[j] = t % 10;
+						t /= 10;
+					}
+					for (j = 1 ; j >= 0 ; j--)
+					{
+						_putchar('0' + arr[j]);
+					}
 				}
 			}
 			_putchar('\n');
