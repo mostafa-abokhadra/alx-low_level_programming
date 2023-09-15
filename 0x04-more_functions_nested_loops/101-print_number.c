@@ -31,7 +31,7 @@ void realprint(int real)
   */
 int printzero(int zero)
 {
-		return (0);
+		return (n);
 }
 
 /**
