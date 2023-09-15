@@ -11,20 +11,10 @@
 */
 void print_remaining_days(int month, int day, int year)
 {
-		int arr[3], temp, i;
-
-		temp = year;
-
-		for (i = 0 ; i < 3 ; i++)
+		
+		if ((year % 4 == 0) && ( year % 400 == 0 || year % 100 != 0))
 		{
-			arr[i] = temp % 10;
-			temp /= 10;
-		}
-		if ((year % 4 == 0 || year % 400 == 0) && !(year % 100 == 0)
-				|| ((arr[0] ==0 && arr[1] == 0) &&
-					(arr[2] == 0 || arr[2] == 4 || arr[2] == 8)))
-		{
-			if (month >= 2 && day >= 60){
+			if (month >= 3 && day >= 60){
 				day++;
 			}
 			printf("Day of the year: %d\n", day);
