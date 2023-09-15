@@ -1,6 +1,8 @@
 #include <limits.h>
 #include "main.h"
 
+/**
+  */
 void printmin(int n)
 {
 if (n == 0)
@@ -32,16 +34,16 @@ _putchar('0' + n%10);
 */
 void realprint(int real)
 {
-                int t;
+int t;
 
-                if (real == 0)
-                {
-                        return;
-                }
+if (real == 0)
+{
+return;
+}
 
-                t = real % 10;
-                realprint(real /= 10);
-                _putchar('0' + t);
+t = real % 10;
+realprint(real /= 10);
+_putchar('0' + t);
 }
 
 /**
@@ -54,7 +56,7 @@ void realprint(int real)
 */
 int printzero(int zero)
 {
-                return (zero);
+return (zero);
 }
 
 /**
@@ -67,24 +69,24 @@ int printzero(int zero)
 */
 void print_number(int n)
 {
-                if (n == 0)
-                {
-                        _putchar('0' + printzero(n));
-                        return;
-                }
-                else if (n < 0 && n != INT_MIN)
-                {
-                        _putchar('-');
-                        n = n  - n - n;
-                        realprint(n);
-                }
-                else if (n == INT_MIN)
-                {
-                    printmin(n);
-                }
-                else
-                {
-                        realprint(n);
+if (n == 0)
+{
+_putchar('0' + printzero(n));
+return;
+}
+else if (n < 0 && n != INT_MIN)
+{
+_putchar('-');
+n = n  - n - n;
+realprint(n);
+}
+else if (n == INT_MIN)
+{
+printmin(n);
+}
+else
+{
+realprint(n);
 
-                }
+}
 }
