@@ -55,13 +55,13 @@ int printzero(int zero)
 }
 
 /**
-* print_number - printing a given num entry
-* @n: the num to be printed
-*
-* Description: just printing a given num using putchar only
-*
-* Return: nothing;
-*/
+  * print_number - printing an integer
+  * @n: the number to be printed
+  *
+  * Description: printing all integers and zero
+  *
+  * Return: nothing
+  */
 void print_number(int n)
 {
 		if (n == 0)
