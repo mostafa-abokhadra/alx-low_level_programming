@@ -11,6 +11,7 @@
 void realprint(int real)
 {
 		int t;
+
 		if (real == 0)
 		{
 			return;
@@ -46,12 +47,12 @@ void print_number(int n)
 {
 		if (n == 0)
 		{
-			_putchar('0' + (printzero(n)));
+			_putchar('0' + printzero(n));
 			return;
 		}
 		else if (n < 0)
 		{
-			_putchar ('-');
+			_putchar('-');
 			n = n - n - n;
 			realprint(n);
 		}
