@@ -8,6 +8,7 @@
   *
   * Return: nothing
   */
+/**
 void printmin(int n)
 {
 		if (n == 0)
@@ -34,6 +35,8 @@ void printmin(int n)
 			_putchar('0' + n % 10);
 		}
 }
+*/
+
 /**
 * realprint - print a num recursively
 * @real: the num to be printed
@@ -83,16 +86,18 @@ void print_number(int n)
 			_putchar('0' + printzero(n));
 			return;
 		}
-		else if (n < 0 && n != INT_MIN)
+		else if (n < 0/* && n != INT_MIN*/)
 		{
 			_putchar('-');
 			n = n  - n - n;
 			realprint(n);
 		}
+		/*
 		else if (n == INT_MIN)
 		{
 			printmin(n);
 		}
+		*/
 		else
 		{
 			realprint(n);
