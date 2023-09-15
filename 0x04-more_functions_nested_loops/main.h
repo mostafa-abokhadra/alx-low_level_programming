@@ -9,6 +9,6 @@ void print_line(int n);
 void print_diagonal(int n);
 void print_square(int size);
 void print_triangle(int size);
-void realprint(int real);
-int printzero(int zero);
 void print_number(int n);
+void realprint(int real);
+ int printzero(int zero);

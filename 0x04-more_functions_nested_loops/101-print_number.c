@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
   * realprint - print a num recursively
   * @real: the num to be printed
@@ -59,4 +60,3 @@ void print_number(int n)
 			realprint(n);
 		}
 }
-
