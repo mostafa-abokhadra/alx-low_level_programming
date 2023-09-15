@@ -11,4 +11,4 @@ void print_square(int size);
 void print_triangle(int size);
 void print_number(int n);
 void realprint(int real);
- int printzero(int zero);
+int printzero(int zero);
