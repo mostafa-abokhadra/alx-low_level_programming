@@ -1,27 +1,38 @@
 #include "main.h"
 
 /**
+  * printmin - only prints INT_MIN
+  * @n: INT_MIN value
+  *
+  * Description: printing int min from int max
+  *
+  * Return: nothing
   */
 void printmin(int n)
 {
-if (n == 0)
-{
-return;
-}
-int little = 0;
-if (n == INT_MIN){
-n = n -1;
-_putchar('-');
-little = (n%10 + 1);
-}
-printmin(n/10);
-if (little != 0)
-{
-_putchar('0' + little);
-}
-else{
-_putchar('0' + n%10);
-}
+		if (n == 0)
+		{
+			return;
+		}
+
+		int little = 0;
+
+		if (n == INT_MIN)
+		{
+			n = n - 1;
+			_putchar('-');
+			little = (n % 10 + 1);
+		}
+		printmin(n / 10);
+
+		if (little != 0)
+		{
+			_putchar('0' + little);
+		}
+		else
+		{
+			_putchar('0' + n % 10);
+		}
 }
 /**
 * realprint - print a num recursively
@@ -33,16 +44,15 @@ _putchar('0' + n%10);
 */
 void realprint(int real)
 {
-int t;
+		int t;
 
-if (real == 0)
-{
-return;
-}
-
-t = real % 10;
-realprint(real /= 10);
-_putchar('0' + t);
+		if (real == 0)
+		{
+			return;
+		}
+		t = real % 10;
+		realprint(real /= 10);
+		_putchar('0' + t);
 }
 
 /**
@@ -55,7 +65,7 @@ _putchar('0' + t);
 */
 int printzero(int zero)
 {
-return (zero);
+		return (zero);
 }
 
 /**
@@ -68,24 +78,23 @@ return (zero);
 */
 void print_number(int n)
 {
-if (n == 0)
-{
-_putchar('0' + printzero(n));
-return;
-}
-else if (n < 0 && n != INT_MIN)
-{
-_putchar('-');
-n = n  - n - n;
-realprint(n);
-}
-else if (n == INT_MIN)
-{
-printmin(n);
-}
-else
-{
-realprint(n);
-
-}
+		if (n == 0)
+		{
+			_putchar('0' + printzero(n));
+			return;
+		}
+		else if (n < 0 && n != INT_MIN)
+		{
+			_putchar('-');
+			n = n  - n - n;
+			realprint(n);
+		}
+		else if (n == INT_MIN)
+		{
+			printmin(n);
+		}
+		else
+		{
+			realprint(n);
+		}
 }
