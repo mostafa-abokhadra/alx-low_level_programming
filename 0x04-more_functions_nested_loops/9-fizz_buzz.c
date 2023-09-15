@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
   * main - printing from 1 to 100
@@ -40,7 +39,8 @@ int main(void)
 				printf("%d ", i);
 			}
 		}
-		_putchar('\n');
+
+		printf("\n");
 
 		return (0);
 }
