@@ -1,50 +1,33 @@
 #include "main.h"
 
 /**
-  * printmin - only prints INT_MIN
-  * @n: INT_MIN value
+  * printnegative - only print -ve integers
+  * @n: the negative number to be printed
   *
-  * Description: printing int min from int max
+  * Description: converting each remainder to positive
   *
   * Return: nothing
   */
-/**
-void printmin(int n)
+void printnegative(int n)
 {
 		if (n == 0)
 		{
+			_putchar('-');
 			return;
 		}
 
-		int little = 0;
-
-		if (n == INT_MIN)
-		{
-			n = n - 1;
-			_putchar('-');
-			little = (n % 10 + 1);
-		}
-		printmin(n / 10);
-
-		if (little != 0)
-		{
-			_putchar('0' + little);
-		}
-		else
-		{
-			_putchar('0' + n % 10);
-		}
+		printnegative(n / 10);
+		_putchar('0' + ( - (n % 10)));
 }
-*/
 
 /**
-* realprint - print a num recursively
-* @real: the num to be printed
-*
-* Description: recurse to get last digit to print using putchar
-*
-* Return: nothing, to calling function
-*/
+  * realprint - print an integer
+  * @real: the num to be printed
+  *
+  * Description: printing out only positive values
+  *
+  * Return: nothing
+  */
 void realprint(int real)
 {
 		int t;
@@ -59,13 +42,13 @@ void realprint(int real)
 }
 
 /**
-* printzero - only print zero
-* @zero: zero number
-*
-* Description: return 0 and print it using put char
-*
-* Return: 0
-*/
+  * printzero - print 0
+  * @zero: 0 number itself
+  *
+  * Description: printing zero varible
+  *
+  * Return: zero variable
+  */
 int printzero(int zero)
 {
 		return (zero);
@@ -86,18 +69,10 @@ void print_number(int n)
 			_putchar('0' + printzero(n));
 			return;
 		}
-		else if (n < 0/* && n != INT_MIN*/)
+		else if (n < 0)
 		{
-			_putchar('-');
-			n = n  - n - n;
-			realprint(n);
+			printnegative(n);
 		}
-		/*
-		else if (n == INT_MIN)
-		{
-			printmin(n);
-		}
-		*/
 		else
 		{
 			realprint(n);
