@@ -2,7 +2,7 @@
 
 /**
   * reset_to_98 - chang a variable to 98
-  * @*n: the value to be changed
+  * @n: the value to be changed
   *
   * Description: changing by referece
   *
