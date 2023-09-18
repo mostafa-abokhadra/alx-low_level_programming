@@ -34,7 +34,14 @@ void rev_string(char *s)
 
 		char t;
 
-		i = get_length(s) - 1;
+		i = get_length(s);
+
+		if (i == 0 || i == 1)
+		{
+			return;
+		}
+
+		i--;
 
 		tt = i;
 
