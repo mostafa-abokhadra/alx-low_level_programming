@@ -12,7 +12,7 @@ int get_length(char *s)
 {
 		int i;
 
-		for ( i = 0 ; s[i] != '\0' ; i++)
+		for (i = 0 ; s[i] != '\0' ; i++)
 		{
 		}
 
@@ -35,7 +35,7 @@ void puts_half(char *str)
 		{
 			j = i - ((i - 1) / 2);
 
-			for (j, i ; j < i ; j++)
+			for (; j < i ; j++)
 			{
 				_putchar(str[j]);
 			}
@@ -44,7 +44,7 @@ void puts_half(char *str)
 		{
 			j = i / 2;
 
-			for (j, i ; j < i ; j++)
+			for (; j < i ; j++)
 			{
 				_putchar(str[j]);
 			}
