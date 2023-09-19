@@ -10,7 +10,7 @@
   */
 int _atoi(char *s)
 {
-		int pos = 1, i, n = 0;
+		int pos = 1, i, n = 0, min = 0;
 
 		for (i = 0 ; s[i] != '\0' ; i++)
 		{
@@ -25,11 +25,16 @@ int _atoi(char *s)
 					pos = 1;
 				}
 			}
+			if (n == 2147483640 && s[i] == '8')
+			{
+				min = 1;
+				break;
+			}
 			if (s[i] >= '0' && s[i] <= '9')
 			{
 				n *= 10;
 				n += (s[i] - '0');
-				if(!(s[i + 1] >= '0' && s[i + 1]<= '9'))
+				if (!(s[i + 1] >= '0' && s[i + 1] <= '9'))
 				{
 					break;
 				}
@@ -37,9 +42,11 @@ int _atoi(char *s)
 		}
 		if (!pos)
 		{
-			if(n < 0)
-				return (n);
 			n *= (-1);
+			if (min)
+			{
+				n-=8;
+			}
 		}
 
 		return (n);
