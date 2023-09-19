@@ -64,7 +64,8 @@ void rev_string(char *s)
 					state = 0;
 				}
 			}
+
+			i--;
+			j++;
 		}
-		i--;
-		j++;
 }
