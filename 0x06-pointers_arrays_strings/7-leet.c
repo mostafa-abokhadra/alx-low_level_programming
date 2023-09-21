@@ -11,6 +11,7 @@
 char *leet(char *s)
 {
 		int i, j, k;
+
 		char arr[5][3] = {{'a', 'A', '4'},
 			{'e', 'E', '3'},
 			{'o', 'O', '0'},
