@@ -12,7 +12,9 @@
 void reverse_array(int *a, int n)
 {
 		if (n == 1 || n == 0)
+		{
 			return;
+		}
 
 		int state = 1, i = 0, tn, tt;
 
