@@ -14,6 +14,11 @@ void reverse_array(int *a, int n)
 
 		int state = 1, i = 0, tn, tt;
 
+		if (n <= 1)
+		{
+			return;
+		}
+
 		n--;
 		tt = n;
 
