@@ -10,28 +10,20 @@
   */
 char *leet(char *s)
 {
-		int i, j, k;
-
-		char arr[5][3] = {{'a', 'A', '4'},
-			{'e', 'E', '3'},
-			{'o', 'O', '0'},
-			{'t', 'T', '7'},
-			{'l', 'L', '1'}};
+		char s1[] = "AaEeOoLlTt";
+		char s2[] = "4433001177";
+		int i, j;
 
 		for (i = 0 ; s[i] != '\0' ; i++)
 		{
-			for (j = 0 ; j < 5 ; j++)
+			for (j = 0 ; j < 10 ; j++)
 			{
-				for (k = 0 ; k < 2 ; k++)
+				if (s[i] == s1[j])
 				{
-					if (s[i] == arr[j][k])
-					{
-						s[i] = arr[j][2];
-					}
+					s[i] = s2[j];
 				}
 			}
 		}
 
 		return (s);
 }
-
