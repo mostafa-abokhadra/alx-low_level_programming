@@ -2,11 +2,10 @@
 
 /**
   * _strpbrk - searches a string for any of a set of bytes
-  * @s: the string
+  * @s: the string to search on
   * @accept: the string to search upon
   *
-  * Description: locates the first occurrence in the string s
-  * of any of the bytes in the string accept
+  * Description: locates the first occurrence in the string
   *
   * Return : pointer to first occurrence, or NULL if not found
   */
