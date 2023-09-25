@@ -7,7 +7,7 @@
   *
   * Description: locates the first occurrence in the string
   *
-  * Return : pointer to first occurrence, or NULL if not found
+  * Return: pointer to first occurrence, or NULL if not found
   */
 char *_strpbrk(char *s, char *accept)
 {
