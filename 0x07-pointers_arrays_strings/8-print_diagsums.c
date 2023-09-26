@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
   * print_diagsums - sum of matrix diagnol
   * @a: the matrix
