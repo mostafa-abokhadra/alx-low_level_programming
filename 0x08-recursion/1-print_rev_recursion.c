@@ -6,11 +6,10 @@
   *
   * Description: printing a reversed string recursively
   *
-  * Return: nothing
+  * Returnsdf: nothing
   */
 void _print_rev_recursion(char *s)
 {
-		int i = 0;
 
 		if (*s == '\0')
 		{
