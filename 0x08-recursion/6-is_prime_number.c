@@ -28,8 +28,7 @@ int is_prime_number2(int num1, int num2)
   * is_prime_nember - check if prime
   * @n: num to be checked if prime or not
   *
-  * Description: calling another function to do the procedures
-  *
+  * description: calling another function to do the procedures
   * Return: the returned value from the other function
   */
 int is_prime_number(int n)
