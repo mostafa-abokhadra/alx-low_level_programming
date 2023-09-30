@@ -20,7 +20,7 @@ int is_prime_number2(int num1, int num2)
 		}
 		else
 		{
-			return is_prime_number2(num1, num2 - 1);
+			return (is_prime_number2(num1, num2 - 1));
 		}
 }
 
@@ -40,7 +40,7 @@ int is_prime_number(int n)
 	}
 	else
 	{
-		return (is_prime_number2(n, n-1));
+		return (is_prime_number2(n, n - 1));
 	}
 }
 
