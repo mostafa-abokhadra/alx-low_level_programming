@@ -25,7 +25,7 @@ int is_prime_number2(int num1, int num2)
 }
 
 /**
-  * is_prime_nember - check if prime
+  * is_prime_number - check if prime
   * @n: num to be checked if prime or not
   *
   * Description: calling another function to do the procedures
