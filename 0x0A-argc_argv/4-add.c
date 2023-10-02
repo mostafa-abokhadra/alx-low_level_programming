@@ -5,7 +5,7 @@
 /**
   * main - entry point
   * @argc: arg count
-  * @argv: list of arg 
+  * @argv: list of arg
   *
   * Description: sum of arguments
   *
