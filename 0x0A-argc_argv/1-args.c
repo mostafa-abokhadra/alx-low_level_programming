@@ -9,7 +9,7 @@
   * Description: printing the number of the arguments
   * Return: zero to end
   */
-int main(int argc, int __attruibute__((unused)) **argv)
+int main(int argc, __attribute__((unused)) char **argv)
 {
 		printf("%d\n", argc);
 		return (0);
