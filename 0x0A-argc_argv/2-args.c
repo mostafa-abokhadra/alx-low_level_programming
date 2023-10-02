@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
+  * main - entry point
+  * @argc: arguments count
+  * @argv: arguments list
   *
-  *
-  *
-  *
-  *
-  *
+  * Description: printing arguments of the program
+  * Return: zero to end the program
   */
 int main(int argc, char **argv)
 {
