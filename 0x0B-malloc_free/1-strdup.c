@@ -11,6 +11,7 @@
 int l(char *str)
 {
 		int i;
+
 		if (str == NULL)
 		{
 			return (0);
@@ -39,7 +40,7 @@ char *_strdup(char *str)
 			return (NULL);
 		}
 
-		if (arr != NULL) 	
+		if (arr != NULL) 
 		{
 			if (str != NULL )
 			{
@@ -47,7 +48,7 @@ char *_strdup(char *str)
 				{
 					arr[i] = str[i];
 				}
-				arr [i] = '\0';
+				arr[i] = '\0';
 				return (arr);
 			}
 			else
