@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
   * l - length
   * @str: string
@@ -7,18 +8,19 @@
   * Description: size of an array
   * Return: the length
   */
-int l (char *str)
+int l(char *str)
 {
-	int i;
+		int i;
 		if (str == NULL)
 		{
 			return (0);
 		}
-for ( i= 1 ; str[i] != '\0' ; i++)
-{
+		for (i = 1 ; str[i] != '\0' ; i++)
+		{
 
-}
-return i;
+		}
+
+		return (i);
 }
 /**
   * _strdup - copying a stirng in another place
@@ -29,37 +31,34 @@ return i;
   */
 char *_strdup(char *str)
 {
-char *arr = (char *) malloc (l(str) * sizeof(char) + 1);
+		char *arr = (char *) malloc(l(str) * sizeof(char) + 1);
+		int i;
 
-int i;
+		if (str == NULL)
+		{
+			return (NULL);
+		}
 
-if (str == NULL)
-	return NULL;
+		if (arr != NULL) 	
+		{
+			if (str != NULL )
+			{
+				for (i = 0 ; str[i] != '\0'; i++)
+				{
+					arr[i] = str[i];
+				}
+				arr [i] = '\0';
+				return (arr);
+			}
+			else
+			{
+				return (NULL);
+			}
 
-
-if (arr != NULL) 	
-{
-if (str != NULL )
-{
-for (i = 0 ; str[i] != '\0'; i++)
-{
-arr[i] = str[i];
+		}
+		else
+		{
+			return (NULL);
+		}
 }
-arr [i] = '\0';
-return (arr);
-}
-else
-{
-return (NULL);
-}
-
-}
-else
-{
-return (NULL);
-}
-
-}
-
-
 
