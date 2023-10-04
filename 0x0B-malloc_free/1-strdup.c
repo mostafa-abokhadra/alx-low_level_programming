@@ -25,13 +25,13 @@ return i;
   */
 char *_strdup(char *str)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
 char *arr = (char *) malloc (l(str) * sizeof(str));
 
 int i;
+
+if (str == NULL)
+	return NULL;
+
 
 if (arr != NULL)
 {
