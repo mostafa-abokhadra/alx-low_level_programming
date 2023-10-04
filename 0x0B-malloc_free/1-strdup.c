@@ -29,7 +29,7 @@ return i;
   */
 char *_strdup(char *str)
 {
-char *arr = (char *) malloc ( sizeof(str)+sizeof(char));
+char *arr = (char *) malloc (l(str) * sizeof(char) + 1);
 
 int i;
 
