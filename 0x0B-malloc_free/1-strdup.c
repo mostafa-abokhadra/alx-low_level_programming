@@ -40,7 +40,7 @@ char *_strdup(char *str)
 			return (NULL);
 		}
 
-		if (arr != NULL) 
+		if (arr != NULL)
 		{
 			if (str != NULL)
 			{
