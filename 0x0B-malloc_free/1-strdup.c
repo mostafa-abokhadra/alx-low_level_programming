@@ -13,7 +13,7 @@ int l (char *str)
 		if (str == NULL)
 		{
 			return (0);
-		}/
+		}
 for ( i= 1 ; str[i] != '\0' ; i++)
 {
 
