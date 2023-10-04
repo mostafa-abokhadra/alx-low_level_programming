@@ -9,11 +9,11 @@
   */
 int l (char *str)
 {
+	int i;
 		if (str == NULL)
 		{
 			return (0);
-		}
-int i;
+		}/
 for ( i= 1 ; str[i] != '\0' ; i++)
 {
 
