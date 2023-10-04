@@ -42,7 +42,7 @@ char *_strdup(char *str)
 
 		if (arr != NULL) 
 		{
-			if (str != NULL )
+			if (str != NULL)
 			{
 				for (i = 0 ; str[i] != '\0'; i++)
 				{
