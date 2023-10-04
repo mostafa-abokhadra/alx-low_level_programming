@@ -27,8 +27,6 @@ char *_strdup(char *str)
 {
 char *arr = (char *) malloc (l(str) * sizeof(str));
 
-printf("%d\n",sizeof(arr));
-
 int i;
 
 if (arr != NULL)
