@@ -30,7 +30,7 @@ int str_l(char *str)
   */
 char *str_concat(char *s1, char *s2)
 {
-		int size = 1;
+		int size = 1, j = 0;
 
 		char *n_str = (char *)malloc (size * sizeof(char));
 
@@ -51,9 +51,7 @@ char *str_concat(char *s1, char *s2)
 				n_str[i] = s1[i];
 			}
 
-			int j = 0;
-
-			for (i, j = 0 ; s2[j] != '\0' ; j++ , i++)
+			for (j = 0 ; s2[j] != '\0' ; j++ , i++)
 			{
 				n_str[i] = s2[j];
 			}
