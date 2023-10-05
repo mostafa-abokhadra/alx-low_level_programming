@@ -11,13 +11,13 @@
   */
 int l(int ac, char *av[])
 {
+	int i, j, sum = 0;
 
 if (ac == 0 || av[0] == NULL)
 {
 return (0);
 }
 
-int i, j, sum = 0;
 
 for (i = 0 ; i < ac; i++)
 {
@@ -30,7 +30,7 @@ for (j = 1; av[i][j] != '\0';j++)
 sum += (j + 1);
 }
 }
-return (sum + 1);// +1 for null terminator
+return (sum + 1);
 }
 
 /**
