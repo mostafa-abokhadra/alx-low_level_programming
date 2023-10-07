@@ -3,6 +3,13 @@
 #include <limits.h>
 #include <unistd.h>
 
+/**
+  * rec - recursively printing
+  * @num: number
+  *
+  * Descriptioin: print number digit by digit
+  * Return: nothing
+  */
 void rec(int num)
 {
 		char cnum;
@@ -12,10 +19,18 @@ void rec(int num)
 			return;
 		}
 		rec(num / 10);
-		cnum = num % 10 ;
+		cnum = num % 10;
 		_putchar(cnum + '0');
 }
 
+/**
+  * check - if nums or not
+  * @ac: number of args
+  * @av: list of args
+  *
+  * Description: check if any digit is not number
+  * Return: 1 if all clear, 0 if not
+  */
 int check(int ac, char *av[])
 {
 		int  i, j, c = 1;
@@ -24,7 +39,7 @@ int check(int ac, char *av[])
 		{
 			for (j = 0 ; av[i][j] != '\0' ; j++)
 			{
-				if (av[i][j] >='0' && av[i][j] <='9')
+				if (av[i][j] >= '0' && av[i][j] <= '9')
 				{
 					continue;
 				}
@@ -32,9 +47,16 @@ int check(int ac, char *av[])
 				break;
 			}
 		}
-		return c;
+		return (c);
 }
-
+/**
+  * main - entry point
+  * @ac: args
+  * @av: args list
+  *
+  * Description: calling functions to process
+  * Return: always 0
+  */
 int main(int ac, char *av[])
 {
 		int i, num1 = 0, num2 = 0, result;
@@ -51,11 +73,11 @@ int main(int ac, char *av[])
 		}
 		for (i = 0 ; av[1][i] != '\0' ; i++)
 		{
-			num1 = (num1 *10) + av[1][i] - '0';
+			num1 = (num1 * 10) + av[1][i] - '0';
 		}
 		for (i = 0 ; av[2][i] != '\0' ; i++)
 		{
-			num2 = (num2 *10) + av[2][i] - '0';
+			num2 = (num2 * 10) + av[2][i] - '0';
 		}
 		result = num1 * num2;
 		rec(result);
