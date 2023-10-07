@@ -56,7 +56,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			{
 				arr[i] = s1[i];
 			}
-			for (j = 0 ; j <= s2_size && j <= n ; j++, i++)
+			for (j = 0 ; j <= s2_size && j < n ; j++, i++)
 			{
 				arr[i] = s2[j];
 			}
