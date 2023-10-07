@@ -2,35 +2,33 @@
 #include <stdlib.h>
 
 /**
+  * _calloc - calloc creation
+  * @nmemb: elements of array
+  * @size: bytes of array
   *
-  *
-  *
-  *
-  *
+  * Description: creation of calloc using malloc
+  * Return: the array
   */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-int i;
-void *arr = malloc(nmemb * size);
+		unsigned int i;
+		int *arr = malloc(nmemb * size);
 
-if (nmemb == 0 || size == 0)
-{
-return (0);
-}
-
-if (arr != NULL)
-{
-for (i = 0 ; i < nmemb; i++)
-{
-*((int *)(arr + i)) = 0;
-}
-
-return arr;
-}
-else
-{
-return (NULL);
-}
-
+		if (nmemb == 0 || size == 0)
+		{
+			return (0);
+		}
+		if (arr != NULL)
+		{
+			for (i = 0 ; i < nmemb ; i++)
+			{
+				arr[i] = 0;
+			}
+			return (void*)(arr);
+		}
+		else
+		{
+			return (NULL);
+		}
 }
 
