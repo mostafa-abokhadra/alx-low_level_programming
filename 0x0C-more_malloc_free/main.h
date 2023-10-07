@@ -8,5 +8,7 @@ int *array_range(int min, int max);
 int check_NULL(int min, int max);
 int ll2(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-
+void rec (int num);
+int check (int ac, char *av[]);
+int _putchar(char c);
 #endif /* MAIN_H */
