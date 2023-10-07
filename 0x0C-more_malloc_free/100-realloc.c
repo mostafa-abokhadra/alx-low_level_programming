@@ -2,25 +2,6 @@
 #include <stdlib.h>
 
 /**
-  * _memcpy - set memmory
-  * @str: destination
-  * @str2: source
-  * @size: number of bytes
-  *
-  * Description: seting memmory block to value
-  * Return: nothing
-  */
-void _memcpy(char *str, char *str2, int size)
-{
-		int i;
-
-		for (i = 0 ; str2[i] != '\0' && i < size ; i++)
-		{
-			str[i] = str2[i];
-		}
-}
-
-/**
   * _realloc - changing the size
   * @ptr: old array
   * @old_size: old size
@@ -31,26 +12,41 @@ void _memcpy(char *str, char *str2, int size)
   */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-		void *arr;
+		char *arr;
+		int i;
 
-		if (new_size == 0 && ptr != NULL)
+		if (new_size == 0)
 		{
 			free(ptr);
 			return (NULL);
 		}
-		else if (new_size == old_size)
+		if (new_size == old_size)
 		{
 			return (ptr);
 		}
-		else if (ptr == NULL && new_size > 0)
+		if (ptr == NULL)
 		{
 			arr = malloc(new_size);
+			if (arr == NULL)
+			{
+				return (NULL);
+			}
+
+			return (arr);
 		}
 		else
 		{
 			arr = malloc(new_size);
-			_memcpy(arr, ptr, old_size);
+			if (arr == NULL)
+			{
+				return (NULL);
+			}
+			for (i = 0 ; i < old_size && i < new_size ; i++)
+			{
+				arr [i] =((char*)ptr)[i];
+			}
+			free(ptr);
+			return (arr);
 		}
-		return (arr);
 }
 
