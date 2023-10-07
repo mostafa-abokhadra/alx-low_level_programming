@@ -16,7 +16,7 @@ int l(char *str)
 		{
 			return (0);
 		}
-		for (i = 1 ; str[i] != '\0' ; i++)
+		for (i = 0 ; str[i] != '\0' ; i++)
 		{
 		}
 		return (i);
@@ -33,7 +33,7 @@ int l(char *str)
   */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-		unsigned int i, j, s1_size = l(s1), s2_size = l(s2);
+		unsigned int i, j, s1_size, s2_size;
 		char *arr;
 
 		if (s1 == NULL)
@@ -44,6 +44,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			*s2 = '\0';
 		}
+		s1_size = l(s1);
+		s2_size = l(s2);
 		if (n >= s2_size)
 		{
 			arr = malloc((s1_size + s2_size + 1) * (sizeof(char)));
