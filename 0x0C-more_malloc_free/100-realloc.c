@@ -2,55 +2,55 @@
 #include <stdlib.h>
 
 /**
+  * _memcpy - set memmory
+  * @str: destination
+  * @str2: source
+  * @size: number of bytes
   *
-  *
-  *
-  *
-  *
+  * Description: seting memmory block to value
+  * Return: nothing
   */
-
-void _memcpy(char *str, char *str2 , int size)
+void _memcpy(char *str, char *str2, int size)
 {
-    int i;
+		int i;
 
-    for (i = 0 ; str2[i] != '\0' && i < size ; i++)
-    {
-        str[i] = str2[i];
-    }
+		for (i = 0 ; str2[i] != '\0' && i < size ; i++)
+		{
+			str[i] = str2[i];
+		}
 }
+
 /**
+  * _realloc - changing the size
+  * @ptr: old array
+  * @old_size: old size
+  * @new_size: new array size
   *
-  *
-  *
-  *
-  *
-  *
+  * Description: resize the array into new_size
+  * Return: the new array
   */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
+		void *arr;
 
-void *arr;
-
-
-if (new_size == 0 && ptr != NULL)
-{
-free(ptr);
-return (NULL);
-}
-else if (new_size == old_size)
-{
-return (ptr);
-}
-else if (ptr == NULL && new_size > 0)
-{
-arr = malloc(new_size);
-}
-else
-{
-arr = malloc(new_size);
-_memcpy(arr,ptr,old_size);
-}
-
-return (arr);
+		if (new_size == 0 && ptr != NULL)
+		{
+			free(ptr);
+			return (NULL);
+		}
+		else if (new_size == old_size)
+		{
+			return (ptr);
+		}
+		else if (ptr == NULL && new_size > 0)
+		{
+			arr = malloc(new_size);
+		}
+		else
+		{
+			arr = malloc(new_size);
+			_memcpy(arr, ptr, old_size);
+		}
+		return (arr);
 }
 
