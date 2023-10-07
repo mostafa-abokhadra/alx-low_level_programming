@@ -52,11 +52,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		if (arr != NULL)
 		{
-			for (i = 0 ; s1[i] != '\0' ; i++)
+			for (i = 0 ; i < s1_size ; i++)
 			{
 				arr[i] = s1[i];
 			}
-			for (j = 0 ; s2[j] != '\0' && j < n ; j++, i++)
+			for (j = 0 ; j < s2_size && j < n ; j++, i++)
 			{
 				arr[i] = s2[j];
 			}
