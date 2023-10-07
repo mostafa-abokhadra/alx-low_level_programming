@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <unistd.h>
-#include <stdio.h>
 
 void rec (int num)
 {
