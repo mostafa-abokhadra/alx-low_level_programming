@@ -18,7 +18,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		if (new_d == NULL)
 		{
 			free(new_d);
-			return;
+			return (NULL);
 		}
 
 		new_d->name = name;
