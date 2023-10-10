@@ -1,5 +1,5 @@
-#ifndef _HEADER_
-#define _HEADER_
+#ifndef
+#define
 
 /**
  * struct dog - new type
