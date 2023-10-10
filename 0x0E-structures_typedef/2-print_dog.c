@@ -1,4 +1,4 @@
-#include "dog.h"
+l#include "dog.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -26,7 +26,7 @@ void print_dog(struct dog *d)
 		}
 		if (d->age == 0)
 		{
-			printf("Age: (nil)\n");
+			printf("Age: 0\n");
 		}
 		else
 		{
