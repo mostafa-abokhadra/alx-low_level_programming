@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
+
 /**
   * print_dog - print a dog type variable
   * @d: the struct variable
@@ -24,7 +25,7 @@ void print_dog(struct dog *d)
 		}
 		if (!d->age)
 		{
-			printf("Age: 0\n");
+			printf("Age: %f\n", 0);
 		}
 		else
 		{
