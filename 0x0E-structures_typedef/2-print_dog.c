@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
   * print_dog - print a dog type variable
   * @d: the struct variable
@@ -12,6 +13,7 @@ void print_dog(struct dog *d)
 {
 		if (d == NULL)
 		{
+			free(d);
 			return;
 		}
 		if (d->name == NULL)
