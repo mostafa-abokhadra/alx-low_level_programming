@@ -20,15 +20,12 @@ int main(int ac, char *av[])
 			printf("Error\n");
 			exit(98);
 		}
-		/*
 		if ((strcmp(av[2], "/") == 0 && strcmp(av[3], "0") == 0) ||
 			(strcmp(av[2], "%") == 0 && strcmp(av[3], "0") == 0))
 		{
 			printf("Error\n");
 			exit(100);
 		}
-		*/
-
 		a = atoi(av[1]);
 		b = atoi(av[3]);
 		ptr = get_op_func(av[2]);
@@ -37,6 +34,9 @@ int main(int ac, char *av[])
 			printf("Error\n");
 			exit(99);
 		}
-		printf("%d\n", ptr(a, b));
+		else
+		{
+			printf("%d\n", ptr(a, b));
+		}
 		return (0);
 }
