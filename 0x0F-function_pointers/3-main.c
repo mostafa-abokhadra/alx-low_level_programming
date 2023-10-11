@@ -20,12 +20,14 @@ int main(int ac, char *av[])
 			printf("Error\n");
 			exit(98);
 		}
+		/*
 		if ((strcmp(av[2], "/") == 0 && strcmp(av[3], "0") == 0) ||
 			(strcmp(av[2], "%") == 0 && strcmp(av[3], "0") == 0))
 		{
 			printf("Error\n");
 			exit(100);
 		}
+		*/
 
 		a = atoi(av[1]);
 		b = atoi(av[3]);
