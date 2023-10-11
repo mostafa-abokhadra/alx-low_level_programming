@@ -20,7 +20,7 @@ int main(int ac, char *av[])
 			printf("Error\n");
 			exit(98);
 		}
-		if (strcmp(av[2],"+") != 0 && strcmp(av[2], "-") != 0 &&
+		if (strcmp(av[2], "+") != 0 && strcmp(av[2], "-") != 0 &&
 			strcmp(av[2], "/") != 0 && strcmp(av[2], "*") != 0 &&
 			strcmp(av[2], "%") != 0)
 		{

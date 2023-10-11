@@ -2,13 +2,14 @@
 #include <stdio.h>
 #include "3-calc.h"
 #include <stddef.h>
+
 /**
+  * get_op_func - chose a function
+  * @s: upon operator we choose
   *
+  * Description: getting the suitable function acc to operator
   *
-  *
-  *
-  *
-  *
+  * Return: pointer to the function
   */
 int (*get_op_func(char *s))(int, int)
 {
@@ -22,7 +23,7 @@ int (*get_op_func(char *s))(int, int)
 		};
 		int i = 0;
 
-		while(i < 6)
+		while (i < 6)
 		{
 			if (strcmp(ops[i].op, s) == 0)
 			{
