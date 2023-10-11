@@ -15,7 +15,7 @@ int main(int ac, char *av[])
 		int a, b;
 		int (*ptr)(int, int);
 
-		if (ac > 4)
+		if (ac != 4)
 		{
 			printf("Error\n");
 			exit(98);
