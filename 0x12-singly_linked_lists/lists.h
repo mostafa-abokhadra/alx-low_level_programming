@@ -1,6 +1,8 @@
 #ifndef __HEADER__
 #define __HEADER__
 
+#include <stddef.h>
+
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
