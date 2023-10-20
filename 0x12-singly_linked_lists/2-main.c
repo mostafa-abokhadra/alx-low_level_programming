@@ -42,6 +42,5 @@ int main(void)
     add_node(&head, "William");
     add_node(&head, "Zee");
     print_list(head);
-    printf("done\n");
     return (0);
 }
