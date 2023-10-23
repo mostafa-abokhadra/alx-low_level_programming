@@ -3,7 +3,7 @@
 
 /**
   * free_listint2 - freeing list
-  * @header: head of list
+  * @head: head of list
   *
   * Description: freeing and assigning head to null
   * Return: nothing
