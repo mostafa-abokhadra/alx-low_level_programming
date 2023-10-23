@@ -3,11 +3,6 @@
 #include <stdio.h>
 #include "lists.h"
 
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
 int main(void)
 {
     listint_t *head;
@@ -22,5 +17,7 @@ int main(void)
     add_nodeint_end(&head, 402);
     add_nodeint_end(&head, 1024);
     print_listint(head);
+    free_listint(head);
+    head = NULL;
     return (0);
 }
