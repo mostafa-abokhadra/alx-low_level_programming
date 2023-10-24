@@ -66,16 +66,17 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		listint_t *t = *head;
 		unsigned int func_index = 0;
 
-		if (new_node == NULL)
+		if (new_node == NULL || *head == NULL)
 			return (NULL);
 		new_node->n = n;
-		if ((*head) == NULL)
+		/*if ((*head) == NULL)
 		{
 			(*head) = head_cases(head, idx, n);
 			if (*head == NULL)
 				free(new_node);
 			return (*head);
 		}
+		*/
 		if ((*head) != NULL && idx == 0)
 			(*head) = add_nodeint(head, n);
 		else
