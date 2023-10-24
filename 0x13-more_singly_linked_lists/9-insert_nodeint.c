@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "lists.h"
+#include <stdio.h>
 
 /**
   * add_nodeint - adding node at front
@@ -7,7 +8,7 @@
   * @n: value
   *
   * Description: adding a new node at front
-  @ Return: the head
+  * Return: the head of list
   */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
@@ -69,11 +70,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			return (NULL);
 		new_node->n = n;
 		if ((*head) == NULL)
-			(*head) = head_cases(head, idx, n);
-		if ((*head) == NULL)
 		{
-			free(new_node);
-			return (NULL);
+			(*head) = head_cases(head, idx, n);
+			if (*head == NULL)
+				free(new_node);
+			return (*head);
 		}
 		if ((*head) != NULL && idx == 0)
 			(*head) = add_nodeint(head, n);
