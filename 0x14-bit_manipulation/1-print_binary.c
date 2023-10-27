@@ -5,8 +5,8 @@
  * @n: the number to print
  *
  * Return: void
- */
-/*
+ *
+
 void print_binary(unsigned long int n)
 {
 	int bit = sizeof(n) * 8, printed = 0;
@@ -25,17 +25,49 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 }
 */
+
+/**
+ * print_binary - prints decimal as binary
+ * @n: long integer
+ */
+
 void print_binary(unsigned long int n)
 {
-		int rem;
+	signed long int size;
+	char c;
+	int flag;
 
-		if (n == 0 || n == 1)
+	size = sizeof(n) * 8 - 1;
+
+	if (n == 0)
+	{
+		_putchar('0');
+		return;
+	}
+
+	if (n == 1)
+	{
+		_putchar('1');
+		return;
+	}
+
+	flag = 0;
+
+	while (size >= 0)
+	{
+		c = (n >> size) & 1;
+
+		if (flag == 1)
+			_putchar(c + '0');
+		else
 		{
-			_putchar(n + '0');
-			return;
+			if (c == 1)
+			{
+				_putchar(c + '0');
+				flag = 1;
+			}
 		}
-		rem = n % 2;
-		print_binary(n /= 2);
-		_putchar(rem + '0');
-}
 
+		size -= 1;
+	}
+}
