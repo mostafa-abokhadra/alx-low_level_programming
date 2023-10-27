@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 	char ch;
 	int flg;
 
-	size = sizeof(n) * (8 - 1);
+	size = sizeof(n) * 8 - 1;
 	if (n == 0)
 	{
 		_putchar('0');
