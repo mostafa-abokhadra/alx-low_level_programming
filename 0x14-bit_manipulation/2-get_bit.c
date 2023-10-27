@@ -25,7 +25,8 @@ return (i);
   */
 char *get_binary(unsigned long int n)
 {
-    char *bin_str = malloc(sizeof(char) * 33);
+	unsigned size = sizeof(n) * 8;
+    char *bin_str = malloc(sizeof(char) * size + 1);
     unsigned int i;
 
     for (i = 0; n; i++)
