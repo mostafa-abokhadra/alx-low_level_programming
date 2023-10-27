@@ -55,8 +55,8 @@ int get_bit(unsigned long int n, unsigned int index)
 int get_bit(unsigned long int n, unsigned int index)
 {
 char *str = get_binary(n);
-unsigned int length = _strlen(str);
-if(index < length)
+
+if(index < sizeof(n) * 8)
 return (str[index] - '0');
 else
 return (-1);
