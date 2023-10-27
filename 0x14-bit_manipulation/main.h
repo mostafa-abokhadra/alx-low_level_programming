@@ -1,5 +1,7 @@
 #ifndef __HEADER__
 #define __HEADER__
+
+#include <limits.h>
 int _putchar(char c);
 unsigned int binary_to_uint(const char *b);
 int _strlen(const char *b);
