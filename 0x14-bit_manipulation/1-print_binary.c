@@ -30,7 +30,7 @@ void print_binary(unsigned long int n)
 			_putchar(ch + '0');
 		else
 		{
-			if (c == 1)
+			if (ch == 1)
 			{
 				_putchar(ch + '0');
 				flg = 1;
