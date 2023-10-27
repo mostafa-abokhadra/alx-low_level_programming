@@ -2,9 +2,14 @@
 #define __HEADER__
 
 #include <limits.h>
+
 int _putchar(char c);
+/* binary to int functions */
 unsigned int binary_to_uint(const char *b);
 int _strlen(const char *b);
+char *rev_str(const char *str);
+int _pow(int pow);
+/* end */
 void print_binary(unsigned long int n);
 int get_bit(unsigned long int n, unsigned int index);
 int set_bit(unsigned long int *n, unsigned int index);
