@@ -25,7 +25,7 @@ return (i);
   */
 char *get_binary(unsigned long int n)
 {
-	unsigned size = sizeof(n) * 8;
+unsigned size = sizeof(n) * 8;
     char *bin_str = malloc(sizeof(char) * size + 1);
     unsigned int i;
 
@@ -56,9 +56,9 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 char *str = get_binary(n);
 
-if(index < sizeof(n) * 8)
+if(index >= sizeof(n) * 8)
+	return -1;
 return (str[index] - '0');
-else
-return (-1);
+
 }
 
