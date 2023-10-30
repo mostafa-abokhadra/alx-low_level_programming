@@ -33,13 +33,14 @@ int _strlen(char *str)
 size_t read_textfile(const char *filename, size_t letters)
 {
 		int fd = open(filename, O_RDONLY);
-		int count = 0;
+		int count = 0, c2 = 0;
 		char *str = malloc(sizeof(char) * letters + 1);
 
 		if (fd < 0 || filename == NULL)
 			return (0);
 		count = read(fd, str, letters);
-		if (write(1, str, _strlen(str)) < 0)
+		c2 = write(1, str, _strlen(str));
+		if (c2 < 0 || c2 != count)
 			return (0);
 		return (count);
 }
