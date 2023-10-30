@@ -34,7 +34,7 @@ size_t read_textfile(const char *filename, size_t letters)
 {
 		int fd = open(filename, O_RDONLY);
 		int count = 0;
-		char *str = malloc (sizeof(char) * letters + 1);
+		char *str = malloc(sizeof(char) * letters + 1);
 
 		if (fd < 0 || filename == NULL)
 			return (0);
