@@ -21,7 +21,7 @@ int _len(char *str)
 }
 
 /**
-  * appent_text_to_file - append
+  * append_text_to_file - append
   * @filename: file name
   * @text_content: txt
   *
