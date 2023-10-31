@@ -29,23 +29,20 @@ int _len(char *str)
   */
 int create_file(const char *filename, char *text_content)
 {
-		int fd1, count = 0;
+		int fd, count = 0;
 
-		if (filename == NULL)
+		if (!filename)
 			return (-1);
-		fd1 = open(filename, O_RDWR);
-		if (fd1 > 0)
-			truncate(filename, 0);
+		fd = open(filename, O_CREAT | O_TRUNC, 500);
+		if(fd < 0)
+			return (-1);
 		else
-			fd1 = open(filename, O_RDWR | O_CREAT);
-		if (fd1 < 0)
-			return (-1);
-		if (text_content == NULL)
-			write(fd1, "\0", 1);
-		else
-			count = write(fd1, text_content, _len(text_content));
-		if (count != _len(text_content))
-			return (-1);
+		{
+			if (!text_content)
+				return (1);
+			count = write(fd, text_content, _len(text_content));
+			if (count < 0)
+				return (-1);
+		}
 		return (1);
-
 }
