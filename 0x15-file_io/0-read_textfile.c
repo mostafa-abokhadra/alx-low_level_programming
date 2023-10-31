@@ -44,7 +44,7 @@ size_t read_textfile(const char *filename, size_t letters)
 		if (r_count < 0)
 			return (0);
 		str[r_count] = '\0';
-		w_count = write(1, str, _strlen(str));
+		w_count = write(STDOUT_FILENO, str, _strlen(str));
 		if (w_count < 0 || w_count != r_count)
 			return (0);
 		close(fd);
