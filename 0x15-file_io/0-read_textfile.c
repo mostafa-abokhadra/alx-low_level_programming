@@ -30,7 +30,7 @@ int _strlen(char *str)
   * Description: using system call function
   * Return: number of bytes were printed successfully to stdout
   */
-size_t read_textfile(const char *filename, size_t letters)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
 		int fd, r_count = 0, w_count = 0;
 		char *str = malloc(sizeof(char) * letters + 1);
@@ -41,11 +41,11 @@ size_t read_textfile(const char *filename, size_t letters)
 		if (fd < 0)
 			return (0);
 		r_count = read(fd, str, letters);
-		if (r_count <= 0)
+		if (r_count < 0)
 			return (0);
 		str[r_count] = '\0';
 		w_count = write(1, str, _strlen(str));
-		if (w_count <= 0 || w_count != r_count)
+		if (w_count < 0 || w_count != r_count)
 			return (0);
 		close(fd);
 		return (w_count);
