@@ -41,11 +41,11 @@ size_t read_textfile(const char *filename, size_t letters)
 		if (fd < 0)
 			return (0);
 		r_count = read(fd, str, letters);
-		if (r_count < 0)
+		if (r_count <= 0)
 			return (0);
 		str[r_count] = '\0';
 		w_count = write(1, str, _strlen(str));
-		if (w_count < 0 || w_count != r_count)
+		if (w_count <= 0 || w_count != r_count)
 			return (0);
 		close(fd);
 		return (w_count);
