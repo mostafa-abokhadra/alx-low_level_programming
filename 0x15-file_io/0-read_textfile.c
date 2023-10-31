@@ -30,12 +30,12 @@ int _strlen(char *str)
   * Description: using system call function
   * Return: number of bytes were printed successfully to stdout
   */
-ssize_t read_textfile(const char *filename, size_t letters)
+size_t read_textfile(const char *filename, size_t letters)
 {
 		int fd, r_count = 0, w_count = 0;
 		char *str = malloc(sizeof(char) * letters + 1);
 
-		if (!filename)
+		if (!filename ||| !letters)
 			return (0);
 		fd = open(filename, O_RDONLY);
 		if (fd < 0)
