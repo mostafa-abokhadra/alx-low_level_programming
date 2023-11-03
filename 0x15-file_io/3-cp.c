@@ -53,7 +53,7 @@ void error_exit(int code, const char *message,const char *file)
         exit(code);
 }
 
-void copy_file(int fd_from, int fd_to, const char *file_from, const char *file_to)
+void copy_file(int fd_from, int fd_to, const char *file_from, const char *file_to)/* adding name of files*/
 {
         char buffer[BUFFER_SIZE];
         ssize_t bytes_read;
@@ -61,13 +61,13 @@ void copy_file(int fd_from, int fd_to, const char *file_from, const char *file_t
         bytes_read = read(fd_from, buffer, BUFFER_SIZE);
         if (bytes_read == -1)
         {
-                error_exit(98, "Error: Can't read from file %s\n", file_from);
+                error_exit(98, "Error: Can't read from file %s\n", file_from);/* replace */
         }
         if (bytes_read > 0)
         {
                 if (write(fd_to, buffer, bytes_read) != bytes_read)
                 {
-                        error_exit(99, "Error: Can't write to %s\n", file_to);
+                        error_exit(99, "Error: Can't write to %s\n", file_to);/*replace*/
                 }copy_file(fd_from, fd_to, file_from, file_to);
         }
 }
