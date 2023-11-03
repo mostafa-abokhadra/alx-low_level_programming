@@ -99,11 +99,11 @@ int main(int argc, char *argv[])
 	sprintf(file_to,"%u" ,fd_to);
         if (close(fd_from))
         {
-                error_exit(100, "Error: Can't close fd %d\n",file_from);
+                error_exit(100, "Error: Can't close fd %s\n",file_from);
         }
 if (close(fd_to))
 {
-error_exit(100, "Error: Can't close fd %d\n",file_to);
+error_exit(100, "Error: Can't close fd %s\n",file_to);
 }
 return(EXIT_SUCCESS);
 }
