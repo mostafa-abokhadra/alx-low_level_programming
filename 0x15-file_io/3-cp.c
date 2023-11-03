@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include<string.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -59,21 +60,21 @@ void copy_file(int fd_from, int fd_to)
         bytes_read = read(fd_from, buffer, BUFFER_SIZE);
         if (bytes_read == -1)
         {
-                error_exit(98, "Error: Can't read from file %s\n", "source_file");
+                error_exit(98, "Error: Can't read from file %s\n","source_file"/* argv[1]*/);
         }
         if (bytes_read > 0)
         {
                 if (write(fd_to, buffer, bytes_read) != bytes_read)
                 {
-                        error_exit(99, "Error: Can't write to %s\n", "destination_file");
+                        error_exit(99, "Error: Can't write to %s\n", "destination_file"/*av[2]*/);
                 }copy_file(fd_from, fd_to);
         }
 }
 
 int main(int argc, char *argv[])
 {
-        const char *file_from;
-        const char *file_to;
+         char *file_from = malloc(sizeof(char));
+         char *file_to = malloc(sizeof(char));
         int fd_from, fd_to;
 
         if (argc != 3)
@@ -93,12 +94,18 @@ int main(int argc, char *argv[])
                 /*close(fd_from);*/
                 error_exit(99, "Error: Can't write to %s\n", /*file_to*/ argv[2]);
         }
-        copy_file(/*fd_from*/argv[1],/* fd_to*/argv[2]);
-        if (close(fd_from) == -1 || close(fd_to) == -1)
+        copy_file(fd_from,fd_to);
+	sprintf(file_from,"%u", fd_from);
+	sprintf(file_to,"%u" ,fd_to);
+        if (close(fd_from))
         {
-                error_exit(100, "Error: Can't close fd %d\n",
-                                (fd_from == -1) ? file_to : file_from);
-        }return(0);
+                error_exit(100, "Error: Can't close fd %d\n",file_from);
+        }
+if (close(fd_to))
+{
+error_exit(100, "Error: Can't close fd %d\n",file_to);
+}
+return(EXIT_SUCCESS);
 }
 
 
