@@ -17,6 +17,7 @@
   * Description: copying a file into a new file
   * Return: success
   */
+
 int main(int count, char **av)
 {
 		int fd1, fd2, r_c;
