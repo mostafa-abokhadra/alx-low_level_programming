@@ -27,5 +27,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			free(t2);
 			return (1);
 		}
-		return (-1);
+		else
+			return (-1);
 }
