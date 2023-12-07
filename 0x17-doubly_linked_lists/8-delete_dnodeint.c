@@ -1,7 +1,14 @@
 #include <stdlib.h>
 #include "lists.h"
 #include <stdio.h>
-
+/**
+ * delete_dnodeint_at_index - deleting a node
+ * @head: head of list
+ * @index: position
+ *
+ * Description: del a node
+ * Return: 1 on success, -1 on failure
+ */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 		dlistint_t *t = *head, *t2;
@@ -15,10 +22,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			free(t);
 			return (1);
 		}
-		for (; i < index - 1 && t->next != NULL; t=t->next, i++)
-		{
-
-		}
+		for (; i < index - 1 && t->next != NULL; t = t->next, i++)
+		{}
 		if (i == index - 1 && t->next != NULL)
 		{
 			t2 = t->next;
@@ -29,8 +34,5 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			return (1);
 		}
 		else
-		{
-			printf("in\n");
 			return (-1);
-		}
 }
