@@ -6,7 +6,7 @@
  * @head: head of list
  *
  * Description: sum of nums
- * return: the sum
+ * Return: the sum
  */
 int sum_dlistint(dlistint_t *head)
 {
