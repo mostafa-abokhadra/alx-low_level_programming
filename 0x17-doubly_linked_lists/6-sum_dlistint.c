@@ -2,11 +2,11 @@
 #include "lists.h"
 
 /**
- * 
- * 
+ * sum_dlistint - sum of integers
+ * @head: head of list
  *
- *
- *
+ * Description: sum of nums
+ * return: the sum
  */
 int sum_dlistint(dlistint_t *head)
 {
