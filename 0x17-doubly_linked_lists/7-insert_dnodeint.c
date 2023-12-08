@@ -12,37 +12,34 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-		unsigned int i = 0;
-		dlistint_t *new_node = NULL;
-		dlistint_t *t = *h;
+		dlistint_t *new_mem, *res_mem = *h;
+	/* unsigned int counter = 0 */
 
-		if (!(*h) && idx != 0)
+	if (idx == 0)
+		return (add_dnodeint(h, n));
+
+	for (; idx != 1; idx--)
+	{
+		if (res_mem == NULL)
 			return (NULL);
-		if (!(*h) && idx == 0)
-			return (add_dnodeint(h, n));
-		new_node = malloc(sizeof(dlistint_t));
-		if(!new_node)
-			return (NULL);
-		new_node->n = n;
-		if (idx == 0)
-			 return (add_dnodeint(h, n));
-		for(;i < idx - 1 && t->next != NULL; t = t->next, i++)
-		{
-		}
-		if (t->next == NULL && i == idx - 1)
-		{
-			t->next = new_node;
-			new_node->prev = t;
-			return new_node;
-		}
-		if (i == idx - 1)
-		{
-			new_node->next = t->next;
-			t->next = new_node;
-			new_node->prev = t;
-			return (new_node);
-		}
+		res_mem = res_mem->next;
+	}
+
+	if (res_mem->next == NULL)
+		return (add_dnodeint_end(h, n));
+
+	new_mem = malloc(sizeof(dlistint_t));
+
+	if (new_mem == NULL)
 		return (NULL);
+
+	new_mem->n = n;
+	new_mem->next = res_mem->next;
+	new_mem->prev = res_mem;
+	res_mem->next->prev = new_mem;
+	res_mem->next = new_mem;
+
+	return (new_mem);
 	/*
 		unsigned int step = 0;
 		dlistint_t *t = *h, *new_node = NULL;
