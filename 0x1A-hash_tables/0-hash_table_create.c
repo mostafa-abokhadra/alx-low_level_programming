@@ -4,6 +4,7 @@
 /**
  * hash_table_create - create a hash table
  * @size: size of table
+ *
  * description: creating a table
  * Return: hash table or NULl
  */
