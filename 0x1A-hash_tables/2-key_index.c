@@ -7,7 +7,8 @@
  *
  * Return: Index number for the key/value pair in the hash table array.
  */
-unsigned long int key_index(const unsigned char *key, unsigned long int size __attribute__((unused)))
+unsigned long int key_index(const unsigned char *key,
+		unsigned long int size __attribute__((unused)))
 {
 		return (hash_djb2(key) % size);
 }
