@@ -1,16 +1,12 @@
 #include "hash_tables.h"
 
-/*
-void free_table(hash_table_t *t)
-{
-		unsigned long int i;
-
-		if (!t)
-			return;
-		for (i = 0; i < t->size; i++)
-			free(t->array[i]);
-}
-*/
+/**
+ * hash_table_create - creating hash table
+ *
+ * @size: size of table
+ *
+ * Return: address of the new table
+ */
 hash_table_t *hash_table_create(unsigned long int size)
 {
 		hash_table_t *table;
@@ -30,6 +26,5 @@ hash_table_t *hash_table_create(unsigned long int size)
 		}
 		for (i = 0; i < table->size; i++)
 			table->array[i] = NULL;
-		/* free_table(table); */
 		return (table);
 }

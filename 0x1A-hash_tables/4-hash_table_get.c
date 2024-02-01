@@ -1,5 +1,13 @@
 #include "hash_tables.h"
 
+/**
+ * hash_table_get - getting value of key
+ *
+ * @ht: the table
+ * @key: key to retrieve it's value
+ *
+ * Return: the value or NULL on failure
+ */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 		hash_node_t *t = NULL;
@@ -11,13 +19,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		if (!ht->array[idx])
 			return (NULL);
 		t = ht->array[idx];
-		while(t != NULL)
+		while (t != NULL)
 		{
 			if (strcmp(key, t->key) == 0)
-			{
 				return (t->value);
-				break;
-			}
 			t = t->next;
 		}
 		return (NULL);

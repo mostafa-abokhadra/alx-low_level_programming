@@ -1,5 +1,13 @@
 #include "hash_tables.h"
 
+/**
+ * hash_table_set - adding to table
+ *
+ * @key: key of value
+ * @value: value of key
+ *
+ * Return: 1 on success, 0 on failure
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 		unsigned long int idx;
