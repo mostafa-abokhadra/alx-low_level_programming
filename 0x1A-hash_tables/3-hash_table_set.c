@@ -3,6 +3,7 @@
 /**
  * hash_table_set - adding to table
  *
+ * @ht: table
  * @key: key of value
  * @value: value of key
  *
