@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include "linked_list.h"
 
 /**
  *
@@ -47,6 +48,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		if (!new_node->value)
 			return (0);
 		index = key_index((const unsigned char *)key, ht->size);
+		if ()
+
 }
 
 /**

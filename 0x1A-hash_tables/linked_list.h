@@ -3,6 +3,8 @@
 
 #include "hash_tables.h"
 
+static int size;
+
 typedef struct list
 {
 		shash_node_t *ptr;
@@ -21,10 +23,10 @@ node *add_front(node *head, shash_node_t *ptr)
 			head = new_node;
 		else
 		{
-			printf("why\n");
 			new_node->next = head;
 			head = new_node;
 		}
+		size++;
 		return (head);
 }
 node *add_end(node *head, shash_node_t *ptr)
@@ -41,6 +43,7 @@ node *add_end(node *head, shash_node_t *ptr)
 		while(temp->next != NULL)
 			temp = temp->next;
 		temp->next = new_node;
+		size++;
 		return (head);
 }
 node *add_before(node *head, char *key, shash_node_t *ptr)
@@ -49,10 +52,7 @@ node *add_before(node *head, char *key, shash_node_t *ptr)
 		node *temp = head;
 
 		if (head == NULL)
-		{
-			printf("first\n");
 			return (add_front(head, ptr));
-		}
 		new_node = malloc(sizeof(node));
 		if (!new_node)
 			return (NULL);
@@ -63,6 +63,7 @@ node *add_before(node *head, char *key, shash_node_t *ptr)
 		new_node->next = temp->next;
 		new_node->ptr = ptr;
 		temp->next = new_node;
+		size++;
 		return (head);
 }
 void print(node *head)
@@ -74,6 +75,7 @@ void print(node *head)
 		for(; t != NULL; t = t->next)
 			printf("%s ", t->ptr->key);
 		printf("\n");
+		printf("size = %d\n", size);
 }
 
 #endif
