@@ -63,12 +63,12 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		index = key_index((const unsigned char *)key, ht->size);
 		if (ht->array[index] == NULL)
 		{
-			 new_node->next = NULL;
-			 new_node->sprev = NULL;
-			 ht->array[index] = new_node;
+			new_node->next = NULL;
+			new_node->sprev = NULL;
+			ht->array[index] = new_node;
 			return (1);
 		}
-	return (0);
+		return (0);
 }
 /**
  * shash_table_get - getting a key value
@@ -116,7 +116,6 @@ void shash_table_print(const shash_table_t *ht)
 
 		if (!ht || !ht->array)
 			return;
-		
 		printf("{");
 		for (i = 0; i < ht->size; i++)
 		{
@@ -136,7 +135,7 @@ void shash_table_print(const shash_table_t *ht)
 				flag = 1;
 			}
 		}
-		printf("}\n");		
+		printf("}\n");
 }
 
 /**
@@ -183,33 +182,33 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-                unsigned long int i;
-                shash_node_t *t = NULL;
-                shash_node_t *d = NULL;
+		unsigned long int i;
+		shash_node_t *t = NULL;
+		shash_node_t *d = NULL;
 
-                if (!ht)
-                        return;
-                else if (!ht->array)
-                        free(ht);
-                else
-                {
-                        for (i = 0; i < ht->size; i++)
-                        {
-                                if (ht->array[i] != NULL)
-                                {
-                                        t = ht->array[i];
-                                        while (t != NULL)
-                                        {
-                                                d = t;
-                                                t = t->next;
-                                                free(d->key);
-                                                free(d->value);
-                                                free(d);
-                                        }
-                                }
-                        }
-                        free(ht->array);
-                        free(ht);
-                }
-                return;
+		if (!ht)
+			return;
+		else if (!ht->array)
+			free(ht);
+		else
+		{
+			for (i = 0; i < ht->size; i++)
+			{
+				if (ht->array[i] != NULL)
+				{
+					t = ht->array[i];
+					while (t != NULL)
+					{
+						d = t;
+						t = t->next;
+						free(d->key);
+						free(d->value);
+						free(d);
+					}
+				}
+			}
+			free(ht->array);
+			free(ht);
+		}
+		return;
 }
