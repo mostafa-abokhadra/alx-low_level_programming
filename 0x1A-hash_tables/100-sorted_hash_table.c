@@ -65,10 +65,17 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			return (0);
 		new_node->key = strdup(key);
 		if (!new_node->key)
+		{
+			free(new_node);
 			return (0);
+		}
 		new_node->value = strdup(value);
 		if (!new_node->value)
+		{
+			free(new_node->key);
+			free(new_node);
 			return (0);
+		}
 		new_node->sprev = NULL;
 		new_node->snext = NULL;
 		index = key_index((const unsigned char *)key, ht->size);
@@ -201,14 +208,53 @@ void shash_table_print_rev(const __attribute__((unused))shash_table_t *ht)
 		print_rev(tt);
 }
 
+void free_linked(node *head)
+{
+		node *t = head, *t2;
 
+		if (!head)
+			return;
+		while (t != NULL)
+		{
+			t2 = t;
+			t = t->next;
+			free(t2);
+		}
+}
 /**
  *
  *
- *
+ */
 void shash_table_delete(shash_table_t *ht)
 {
+		shash_node_t *ts = NULL, *del;
+		unsigned long int i = 0;
+
+		if (!ht)
+			return;
+		if (!ht->array)
+		{
+			free(ht);
+			return;
+		}
+		for (i = 0 ;i < ht->size; i++)
+		{
+			if (ht->array[i] != NULL)
+			{
+				ts = ht->array[i];
+				while (ts != NULL)
+				{
+					del = ts;
+					ts = ts->next;
+					free(del->key);
+					free(del->value);
+					free(del);
+				}
+			}
+		}
+		free(ht->array);
+		free(ht);
+		free_linked(head);
 }
 
-*/
 

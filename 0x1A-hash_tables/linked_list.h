@@ -31,13 +31,14 @@ node *add_front(node *head, shash_node_t *ptr)
 }
 node *add_end(node *head, shash_node_t *ptr)
 {
-		node *new_node = malloc(sizeof(node));
+		node *new_node = NULL;
 		node *temp = head;
 
-		if (!new_node)
-			return (NULL);
 		if (head == NULL)
 			return (add_front(head, ptr));
+		new_node = malloc(sizeof(node));
+		if (!new_node)
+			return (NULL);
 		new_node->ptr = ptr;
 		new_node->next = NULL;
 		while(temp->next != NULL)
@@ -52,12 +53,11 @@ node *add_before(node *head, node *flag, shash_node_t *ptr)
 
 		if (head == NULL)
 			return (add_front(head, ptr));
+		if (flag == head && size == 1)
+			return (add_front(head, ptr));
 		new_node = malloc(sizeof(node));
 		if (!new_node)
 			return (NULL);
-		if (flag == head && size == 1)
-			return (add_front(head, ptr));
-
 		new_node->next = flag->next;
 		new_node->ptr = ptr;
 		flag->next = new_node;
