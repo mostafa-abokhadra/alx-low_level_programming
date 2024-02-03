@@ -46,23 +46,21 @@ node *add_end(node *head, shash_node_t *ptr)
 		size++;
 		return (head);
 }
-node *add_before(node *head, char *key, shash_node_t *ptr)
+node *add_before(node *head, node *flag, shash_node_t *ptr)
 {
 		node *new_node;
-		node *temp = head;
 
 		if (head == NULL)
 			return (add_front(head, ptr));
 		new_node = malloc(sizeof(node));
 		if (!new_node)
 			return (NULL);
-		while (strcmp(temp->ptr->key, key) != 0)
-			temp = temp->next;
-		if (temp == head)
+		if (flag == head && size == 1)
 			return (add_front(head, ptr));
-		new_node->next = temp->next;
+
+		new_node->next = flag->next;
 		new_node->ptr = ptr;
-		temp->next = new_node;
+		flag->next = new_node;
 		size++;
 		return (head);
 }
