@@ -26,6 +26,8 @@ shash_table_t *shash_table_create(unsigned long int size)
 		sht->size = size;
 		for (i = 0; i < size; i++)
 			sht->array[i] = NULL;
+		sht->shead = sht->array[0];
+		sht->stail = sht->array[size - 1];
 		return (sht);
 }
 
@@ -157,15 +159,33 @@ void shash_table_print(const shash_table_t *ht)
 
 }
 
+void print_rev(node *tt)
+{
+		if (tt == NULL)
+		{
+			printf("{");
+			return;
+		}
+		print_rev(tt->next);
+		printf("'%s': ", tt->ptr->key);
+		printf("'%s'", tt->ptr->value);
+		if (tt != head)
+			printf(", ");
+		if (tt == head)
+			printf("}\n");
+}
 /**
  *
  *
  *
- *
-void shash_table_print_rev(const shash_table_t *ht)
+ */
+
+void shash_table_print_rev(const __attribute__((unused))shash_table_t *ht)
 {
+		node* tt = head;
+		print_rev(tt);
 }
-*/
+
 
 /**
  *
