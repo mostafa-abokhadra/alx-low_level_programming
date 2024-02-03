@@ -108,11 +108,30 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 /**
  *
  *
- *
+ */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
+		unsigned long int i = 0;
+		shash_node_t *t = NULL;
+
+		if (!ht || !key)
+			return (NULL);
+		for (i = 0 ; i < ht->size; i++)
+		{
+			if (ht->array[i] != NULL)
+			{
+				t = ht->array[i];
+				while (t != NULL)
+				{
+					if (strcmp(t->key, key) == 0)
+						return (t->value);
+					t = t->next;
+				}
+			}
+		}
+		return (NULL);
 }
-*/
+
 
 /**
  *
@@ -182,8 +201,35 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 /**
  *
- *
+ */
 void shash_table_delete(shash_table_t *ht)
 {
+		shash_node_t *t = NULL, *temp = NULL;
+		unsigned long int i = 0;
+		
+		if (!ht)
+			return;
+		else if (!ht->array)
+			free(ht);
+		else
+		{
+			for (i = 0; i < ht->size; i++)
+			{
+				if (ht->array[i] != NULL)
+				{
+					t = ht->array[i];
+					while (t != NULL)
+					{
+						temp = t;
+						t = t->next;
+						free(temp->key);
+						free(temp->value);
+						free(temp);
+					}
+				}
+			}
+			free(ht->array);
+			free(ht);
+		}
 }
-*/
+
