@@ -117,11 +117,26 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 /**
  *
  *
- *
+ */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
+		shash_node_t *t = NULL;
+		unsigned long int i = 0;
+
+		if (!ht || !key)
+			return (NULL);
+		for (i = 0; i < ht->size; i++)
+		{
+			if (ht->array[i] != NULL)
+			{
+				t = ht->array[i];
+				if (strcmp(key,t->key) == 0)
+					return (t->value);
+			}
+		}
+		return (NULL);
 }
-*/
+
 
 /**
  *
