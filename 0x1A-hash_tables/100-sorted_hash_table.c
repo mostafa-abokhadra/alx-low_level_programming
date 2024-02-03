@@ -200,36 +200,41 @@ void shash_table_print_rev(const shash_table_t *ht)
 }
 
 /**
+ * hash_table_delete - deleting a table
  *
+ * @ht: table to be deleted
+ *
+ * Return: nothing
  */
 void shash_table_delete(shash_table_t *ht)
 {
-		shash_node_t *t = NULL, *temp = NULL;
-		unsigned long int i = 0;
-		
-		if (!ht)
-			return;
-		else if (!ht->array)
-			free(ht);
-		else
-		{
-			for (i = 0; i < ht->size; i++)
-			{
-				if (ht->array[i] != NULL)
-				{
-					t = ht->array[i];
-					while (t != NULL)
-					{
-						temp = t;
-						t = t->next;
-						free(temp->key);
-						free(temp->value);
-						free(temp);
-					}
-				}
-			}
-			free(ht->array);
-			free(ht);
-		}
-}
+                unsigned long int i;
+                shash_node_t *t = NULL;
+                shash_node_t *d = NULL;
 
+                if (!ht)
+                        return;
+                else if (!ht->array)
+                        free(ht);
+                else
+                {
+                        for (i = 0; i < ht->size; i++)
+                        {
+                                if (ht->array[i] != NULL)
+                                {
+                                        t = ht->array[i];
+                                        while (t != NULL)
+                                        {
+                                                d = t;
+                                                t = t->next;
+                                                free(d->key);
+                                                free(d->value);
+                                                free(d);
+                                        }
+                                }
+                        }
+                        free(ht->array);
+                        free(ht);
+                }
+                return;
+}
