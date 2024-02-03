@@ -2,7 +2,7 @@
 
 /**
  * shash_table_create - creating sorted table
- * 
+ *
  * @size: size of table
  *
  * Return: new_table
@@ -39,9 +39,8 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-		shash_node_t *new_node = NULL, *t = NULL;
-		unsigned long int index = 0, i = 0, ascii_sum = 0;
-		unsigned long int new_node_ascii_sum = 0;
+		unsigned long int index = 0;
+		shash_node_t *new_node = NULL;
 
 		if (!ht || !key || !value || key[0] == '\0')
 			return (0);
@@ -68,47 +67,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			 new_node->sprev = NULL;
 			 ht->array[index] = new_node;
 			return (1);
-		}
-		else
-		{
-			for (i = 0; new_node->key[i] != '\0'; i++)
-				new_node_ascii_sum += (int)new_node->key[i];
-
-			t = ht->array[index];
-			while (t != NULL)
-			{
-				for (i = 0; t->key[i] != '\0'; i++)
-					ascii_sum += (int)key[i];
-
-				if (new_node_ascii_sum <= ascii_sum)
-				{
-					if (t->next == NULL && ht->array[index] == t)
-					{
-						/*push_front()*/
-						new_node->snext = t;
-						new_node->sprev = NULL;
-						t->snext = NULL;
-						t->sprev = new_node;
-						ht->array[index] = new_node;
-						return (1);
-					}
-					/*add_befor()*/
-					new_node->snext = t;
-					new_node->sprev = t->sprev;
-					t->sprev = new_node;
-					t->sprev = new_node;
-					return (1);
-				}
-				if (t->snext == NULL)
-				{
-					/*add_end()*/
-					new_node->snext = NULL;
-					new_node->sprev = t;
-					t->snext = new_node;
-					return (1);
-				}
-				t = t->snext;
-			}
 		}
 	return (0);
 }
@@ -223,11 +181,11 @@ void shash_table_print_rev(const shash_table_t *ht)
  *
  * Return: nothing
  */
-void hash_table_delete(hash_table_t *ht)
+void shash_table_delete(shash_table_t *ht)
 {
                 unsigned long int i;
-                hash_node_t *t = NULL;
-                hash_node_t *d = NULL;
+                shash_node_t *t = NULL;
+                shash_node_t *d = NULL;
 
                 if (!ht)
                         return;
